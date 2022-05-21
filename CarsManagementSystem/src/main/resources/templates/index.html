@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Cars list</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css">
+
+
+</head>
+<body>
+<header class="header_list">
+    <h2 class="list_title">CAR LIST</h2>
+</header>
+
+
+
+<section class="info_list">
+    <div class="info_2">
+<h2>Here you can add new cars</h2>
+<div class = "row">
+    <div class = "col-lg-3">
+        <button th:href = "@{/cars/new}"> Add Car:</button>
+    </div>
+</div>
+<h2>Here you can see <br>the list of your Cars:</h2>
+<div class = "row">
+    <div class = "col-lg-3">
+        <button th:href = "@{/cars}" >Get all</button>
+    </div>
+</div>
+    </div>
+</section>
+</body>
+</html>
