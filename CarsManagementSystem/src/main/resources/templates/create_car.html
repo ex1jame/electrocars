@@ -7,15 +7,11 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Create Car Function</a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
+<header class="header_car">
+    <a class="header_title_car" href="#">Create Car Function</a>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -27,18 +23,12 @@
             </li>
         </ul>
     </div>
-</nav>
-<br>
-<br>
+</header>
 
-<div class ="container bg-image"
-     style="background-image: url('https://static01.nyt.com/images/2022/05/18/well/09Well-Carship/09Well-Carship-articleLarge-v2.jpg?quality=75&auto=webp&disable=upscale');
-height: 100vh" >
-    <div class = "row">
-        <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-            <h1 class = "text-center"> Create New Car </h1>
-            <div class = "card-body">
-                <form th:action="@{/cars}" th:object = "${car}" method="POST">
+
+<section class="hero_car">
+    <div class="container">
+                <form th:action="@{/cars}" th:object = "${car}" method="POST" class="car_form">
                     <div class ="form-group">
                         <label> Car Model </label>
                         <input
@@ -103,10 +93,7 @@ height: 100vh" >
                         </button>
                     </div>
                 </form>
-
-            </div>
-        </div>
     </div>
-</div>
+       </section>
 </body>
 </html>
