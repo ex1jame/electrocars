@@ -3,44 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to Cars list</title>
-
-
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossorigin="anonymous">
-
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 
 </head>
 <body>
-<div class="view" style="background-image: url('http://prod-upp-image-read.ft.com/a4e8f394-313b-11ea-a329-0bcf87a328f2'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    <div class="mask rgba-black-light align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 mb-4 white-text text-center">
-                    <h1 class="h1-responsive  text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown text-light " data-wow-delay="0.3s"><strong>Cars list</strong></h1>
-                    <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
-                    <h5 class="text-uppercase mb-4 white-text wow fadeInDown text-light" data-wow-delay="0.4s"><strong>Hello!</strong></h5>
+<div>
+    <header class="header ">
+        <div class="header__main container d-flex justify-between align-center">
+            <a th:href="@{/}" class="header__logo">
+                <img th:src="@{/images/Logo.png}" alt="">
+            </a>
+            <nav class="header__nav d-flex justify-between">
+                <div class="header__main-link">
+                    <a th:href="@{/}" class="header__link">Главная</a>
+                </div>
+                <div class="header__testdrive-link">
+                    <a th:href="@{/login}" class="header__link">Авторизация</a>
+                </div>
+                <div class="header__tracking-link">
+                    <a th:href="@{/cars}" class="header__link">Машины</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="hero d-flex justify-center flex-column align-items">
+        <div class="hero__main d-flex align-center justify-center  flex-column">
+            <h1 class="hero__title">Авто <span class="bold">твоего</span> города</h1>
+            <h2 class="hero__subtitle">Будь одним из первых</h2>
+        </div>
+
+        <button class="orange_btn"><a th:href="@{/login}">Оформить заказ</a></button>
+    </section>
+    <section class="drive">
+                <div class="d-flex justify-center align-center">
+                    <div class="drive_info d-flex flex-column">
+                        <h2 class="section__title"><img th:src="@{/images/light_line.png}" alt="" class="section__img">
+                            ТЕСТ-ДРАЙВ
+                        </h2>
+                        <p class="slider_page-subtitle">
+                            Мы предоставляем возможность лично прочувствовать электромобиль
+                        </p>
+                        <img th:src="@{/images/Volkswagen.png}" alt="" class="drive__img">
+                        <button class="orange_btn"><a th:href="@{/cars}">Записаться</a></button>
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <h2 class="section__title text-right">ПОЧЕМУ НЕОБХОДИМ
+            ЭЛЕКТРОМОБИЛЬ?</h2>
+        <div class="about__main d-flex ">
+            <img th:src="@{/images/car_23.png}" alt="" class="about__img">
+            <div class="about__info">
+                <div class="about__flex align-center">
+                    <p class="about__num about__num-right">01</p>
+                    <p class="about__title">Выгодно</p>
+                </div>
+                <div class="about__flex align-center">
+                    <p class="about__num">02</p>
+                    <p class="about__title">экологично</p>
+                </div>
+                <div class="about__flex align-center">
+                    <p class="about__num">03</p>
+                    <p class="about__title">патриотично</p>
+                </div>
+                <div class="about__flex align-center">
+                    <p class="about__num">04</p>
+                    <p class="about__title">презентабельно</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <section class="news">
+        <div class="container">
+            <p class="section__title">ВИДЕО-ОБЗОРЫ И отзывы <img th:src="@{/images/light_line.png}"
+                                                                 class="section__img"></p>
+            <div class="news__grid">
+                <div class="news__block">
+                    <iframe class='news__video'
+                            src="https://www.youtube.com/embed/hANvpkObrq0">
+                    </iframe>
+                    <p class="news__subtitle">
+                        ТОП-3 электромобиля! Обзор! Хочу электро!
+                    </p>
+                </div>
+                <div class="news__block">
+                    <iframe class='news__video'
+                            src="https://www.youtube.com/embed/BD7fA0fP5zI">
+                    </iframe>
+                    <p class="news__subtitle">
+                        ТОП-3 электромобиля! Обзор! Хочу электро!
+                    </p>
+                </div>
+                <div class="news__block">
+                    <iframe class='news__video'
+                            src="https://www.youtube.com/embed/Wvz3BojHeSE">
+                    </iframe>
+                    <p class="news__subtitle">
+                        ТОП-3 электромобиля! Обзор! Хочу электро!
+                    </p>
+                </div>
+            </div>
+            <p class="section__title">новости <img th:src="@{/images/light_line.png}" class="section__img"></p>
+            <div class="news__grid">
+                <div class="news__block">
+                    <div class="news__content">
+                        <img th:src="@{/images/news_1.png}" alt="">
+                    </div>
+                    <p class="news__subtitle">
+                        Toyota Motor 9 ноября провела презентацию своего первого массового электромобиля bZ4X
+                    </p>
+                </div>
+                <div class="news__block">
+                    <div class="news__content">
+                        <img th:src="@{/images/news_2.png}" alt="">
+                    </div>
+                    <p class="news__subtitle">
+                        Компания Subaru представила первый электрический автомобиль
+                    </p>
+                </div>
+                <div class="news__block">
+                    <div class="news__content">
+                        <img th:src="@{/images/news_3.png}"  alt="">
+                    </div>
+                    <p class="news__subtitle">
+                        Geely показала конкурента электрического грузовика Tesla
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer_main">
+            <h3 class="section__title">КОНТАКТЫ</h3>
+            <div class="footer__flex">
+                <div class="footer__block">
+                    <p class="footer__title">Телефоны:</p>
+                    <p class="footer__title">Адрес:</p>
+                    <p class="footer__title">Соц. сети:</p>
+                </div>
+                <div class="footer__block">
+                    <p class="footer__subtitle">+996 755 055 865</p>
+                    <p class="footer__subtitle">г. Бишкек, ул. Раззакова 32</p>
+                    <div class="footer__grid">
+                        <span class="footer__eclipse"><img th:src="@{/images/Instagram.png}" alt=""></span>
+                        <span class="footer__eclipse"><img th:src="@{/images/Youtube.png}"  alt=""></span>
+                        <span class="footer__eclipse"><img th:src="@{/images/Whatsapp.png}"  alt=""></span>
+                        <span class="footer__eclipse"><img th:src="@{/images/Instagram.png}"  alt=""></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
 </div>
 
-
-
-
-<h2>Here you can add new cars</h2>
-<div class = "row">
-    <div class = "col-lg-3">
-        <a th:href = "@{/cars/new}" class = "btn btn-success btn-sm mb-3"> Add Car:</a>
-    </div>
-</div>
-<h2>Here you can see the list of your Cars:</h2>
-<div class = "row">
-    <div class = "col-lg-3">
-        <a th:href = "@{/cars}" class = "btn btn-info btn-sm mb-3">Get all</a>
-    </div>
-</div>
 </body>
 </html>

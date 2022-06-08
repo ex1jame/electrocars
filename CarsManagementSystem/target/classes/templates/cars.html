@@ -1,83 +1,69 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
     <title>Cars Management System</title>
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-
 <body>
-
-
-<nav class="navbar navbar-dark bg-primary navbar-expand-sm">
-
-    <a class="navbar-brand" href="#">Cars Management System</a>
-
-
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ">
-            <li class="nav-item ">
-                <a class="nav-link " th:href="@{/cars/new}">Add new car</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{http://localhost:8080/}">Main Page</a>
-            </li>
-        </ul>
+<header class="header">
+    <div class="header__main container d-flex justify-between align-center">
+        <a th:href="@{/}" class="header__logo">
+            <img th:src="@{/images/Logo.png}" alt="">
+        </a>
+        <nav class="header__nav d-flex justify-between">
+            <div class="header__main-link">
+                <a th:href="@{http://localhost:8080/}" class="header__link">Главная</a>
+            </div>
+            <div class="header__testdrive-link">
+                <a th:href="@{/cars/new}" class="header__link">Добавление</a>
+            </div>
+            <div class="header__tracking-link">
+                <a th:href="@{/edit_car}" class="header__link">Редактирование</a>
+            </div>
+        </nav>
     </div>
-
-</nav>
-
-
-<div class ="container bg-image"
-     style="background-image:
-     url('https://maserati.scene7.com/is/image/maserati/maserati/regional/us/e-commerce/IMB22US4_001_1280x1280.jpg?$1920x2000$&fit=constrain');
-height: 100vh" >
-    <div class = "row text-light">
-        <h1> List of Cars </h1>
-    </div>
-
-    <div class = "row">
-        <div class = "col-lg-3">
-            <a th:href = "@{/cars/new}" class = "btn btn-primary btn-sm mb-3"> Add Car</a>
-        </div>
-    </div>
-    <table class = "table table-striped table-bordered">
-        <thead class = "table-dark">
-        <tr>
-            <th> Car Model</th>
-            <th> Car Transmission</th>
-            <th> Car Production Year </th>
-            <th> Car Horsepower </th>
-            <th> Car Drive Unit </th>
-            <th> Actions </th>
-        </tr>
-        </thead>
-        <div class="white-text">
-            <tbody >
-            <tr th:each = "car: ${cars}" >
-                <td th:text = "${car.model}" ></td>
-                <td th:text = "${car.transmission}"></td>
-                <td th:text = "${car.productionYear}"></td>
-                <td th:text = "${car.horsepower}"></td>
-                <td th:text = "${car.driveUnit}"></td>
-                <td>
-                    <a th:href = "@{/cars/edit/{id}(id=${car.id})}"
-                       class = "btn btn-primary">Update</a>
-
-                    <a th:href = "@{/cars/{id}(id=${car.id})}"
-                       class = "btn btn-danger">Delete</a>
-
-                </td>
+</header>
+<section class="info_list">
+    <div class="info_margin">
+        <div class="container">
+        <table class="table table-striped table-bordered ">
+            <thead class="table-dark">
+            <tr>
+                <th> Car Model</th>
+                <th> Car Transmission</th>
+                <th> Car Production Year</th>
+                <th> Car Horsepower</th>
+                <th> Car Drive Unit</th>
+                <th> Actions</th>
             </tr>
-            </tbody>
+            </thead>
+            <div class="white-text">
+                <tbody>
+                <tr th:each="car: ${cars}">
+                    <td th:text="${car.model}"></td>
+                    <td th:text="${car.transmission}"></td>
+                    <td th:text="${car.productionYear}"></td>
+                    <td th:text="${car.horsepower}"></td>
+                    <td th:text="${car.driveUnit}"></td>
+                    <td>
+                        <a th:href="@{/cars/edit/{id}(id=${car.id})}"
+                           class="btn btn-primary">Update</a>
+
+                        <a th:href="@{/cars/{id}(id=${car.id})}"
+                           class="btn btn-danger">Delete</a>
+
+                    </td>
+                </tr>
+                </tbody>
+            </div>
+
+
+        </table>
+        <button class="orange_btn" th:href="@{/cars/new}"><a th:href="@{/cars/new}"> Add Car</a></button>
         </div>
-
-
-    </table>
-
-</div>
+    </div>
+</section>
 </body>
 </html>
